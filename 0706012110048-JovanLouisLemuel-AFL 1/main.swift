@@ -10,6 +10,9 @@ import Foundation
 //variable declaration
 var mainMenu: String?
 var tukuMenu: String?
+var gotriMenu:String?
+var madamMenu:String?
+var kopteMenu:String?
 var cartMenu: String?
 var userInput: Int?
 var cart: Int? = 1
@@ -80,16 +83,169 @@ repeat {
         mainMenu = ""
     case "2":
         print("mainMenu = \(mainMenu)")
+        repeat {
+            switch gotriMenu {
+            case "1":
+                print("\nItem 1 @ 999.000")
+                print("How many item 1 do you want to buy?")
+                userInput = Int(readLine()!)
+                gotriCart[0] += userInput!
+                print("Thank you for ordering.")
+                gotriMenu = ""
+                break
+            case "2":
+                print("\nItem 2 @ 999.000")
+                print("How many item 2 do you want to buy?")
+                userInput = Int(readLine()!)
+                gotriCart[1] += userInput!
+                print("Thank you for ordering.")
+                gotriMenu = ""
+                break
+            case"3":
+                print("\nItem 3 @ 999.000")
+                print("How many item 3 do you want to buy?")
+                userInput = Int(readLine()!)
+                gotriCart[2] += userInput!
+                print("Thank you for ordering.")
+                gotriMenu = ""
+                break
+            case"4":
+                print("\nItem 4 @ 999.000")
+                print("How many item 4 do you want to buy?")
+                userInput = Int(readLine()!)
+                gotriCart[3] += userInput!
+                print("Thank you for ordering.")
+                gotriMenu = ""
+                break
+            case "b":
+                gotriMenu = ""
+            default:
+                print("""
+                \nHi, welcome back to Gotri!
+                What would you like to order?\n
+                [1] Item 1
+                [2] Item 2
+                [3] Item 3
+                [4] Item 4
+                -
+                [B]ack to Main Menu
+                Your menu choice?
+                """)
+                gotriMenu = readLine()?.lowercased()
+                break
+            }
+        } while gotriMenu != "b"
         mainMenu = ""
-        break
     case "3":
         print("mainMenu = \(mainMenu)")
+        repeat {
+            switch madamMenu {
+            case "1":
+                print("\nItem 1 @ 999.000")
+                print("How many item 1 do you want to buy?")
+                userInput = Int(readLine()!)
+                madamCart[0] += userInput!
+                print("Thank you for ordering.")
+                madamMenu = ""
+                break
+            case "2":
+                print("\nItem 2 @ 999.000")
+                print("How many item 2 do you want to buy?")
+                userInput = Int(readLine()!)
+                madamCart[1] += userInput!
+                print("Thank you for ordering.")
+                madamMenu = ""
+                break
+            case"3":
+                print("\nItem 3 @ 999.000")
+                print("How many item 3 do you want to buy?")
+                userInput = Int(readLine()!)
+                madamCart[2] += userInput!
+                print("Thank you for ordering.")
+                madamMenu = ""
+                break
+            case"4":
+                print("\nItem 4 @ 999.000")
+                print("How many item 4 do you want to buy?")
+                userInput = Int(readLine()!)
+                madamCart[3] += userInput!
+                print("Thank you for ordering.")
+                madamMenu = ""
+                break
+            case "b":
+                madamMenu = ""
+            default:
+                print("""
+                \nHi, welcome back to Madam Lie!
+                What would you like to order?\n
+                [1] Item 1
+                [2] Item 2
+                [3] Item 3
+                [4] Item 4
+                -
+                [B]ack to Main Menu
+                Your menu choice?
+                """)
+                madamMenu = readLine()?.lowercased()
+                break
+            }
+        } while madamMenu != "b"
         mainMenu = ""
-        break
     case "4":
         print("mainMenu = \(mainMenu)")
+        repeat {
+            switch kopteMenu {
+            case "1":
+                print("\nItem 1 @ 999.000")
+                print("How many item 1 do you want to buy?")
+                userInput = Int(readLine()!)
+                kopteCart[0] += userInput!
+                print("Thank you for ordering.")
+                kopteMenu = ""
+                break
+            case "2":
+                print("\nItem 2 @ 999.000")
+                print("How many item 2 do you want to buy?")
+                userInput = Int(readLine()!)
+                kopteCart[1] += userInput!
+                print("Thank you for ordering.")
+                kopteMenu = ""
+                break
+            case"3":
+                print("\nItem 3 @ 999.000")
+                print("How many item 3 do you want to buy?")
+                userInput = Int(readLine()!)
+                kopteCart[2] += userInput!
+                print("Thank you for ordering.")
+                kopteMenu = ""
+                break
+            case"4":
+                print("\nItem 4 @ 999.000")
+                print("How many item 4 do you want to buy?")
+                userInput = Int(readLine()!)
+                kopteCart[3] += userInput!
+                print("Thank you for ordering.")
+                kopteMenu = ""
+                break
+            case "b":
+                kopteMenu = ""
+            default:
+                print("""
+                \nHi, welcome back to Kopte!
+                What would you like to order?\n
+                [1] Item 1
+                [2] Item 2
+                [3] Item 3
+                [4] Item 4
+                -
+                [B]ack to Main Menu
+                Your menu choice?
+                """)
+                kopteMenu = readLine()?.lowercased()
+                break
+            }
+        } while kopteMenu != "b"
         mainMenu = ""
-        break
     case "s":
         if cart == 0 {
             print("\nYour cart is empty.")
@@ -111,10 +267,54 @@ repeat {
                         print("- Air mineral x\(tukuCart[3])")
                     }
                 }
-                // cart 
-                print("Your order from Gotri:")
-                print("Your order from Madam Lie:")
-                print("Your order from Kopte:")
+                // cart gotri
+                if gotriCart[0] != 0 || gotriCart[1] != 0 || gotriCart[2] != 0 || gotriCart[3] != 0 {
+                    print("\nYour order from Gotri:")
+                    if gotriCart[0] != 0 {
+                        print("- Item 1 x\(gotriCart[0])")
+                    }
+                    if gotriCart[1] != 0 {
+                        print("- Item 2 x\(gotriCart[1])")
+                    }
+                    if gotriCart[2] != 0 {
+                        print("- Item 3 x\(gotriCart[2])")
+                    }
+                    if gotriCart[3] != 0 {
+                        print("- Item 4 x\(gotriCart[3])")
+                    }
+                }
+                // cart madam lie
+                if madamCart[0] != 0 || madamCart[1] != 0 || madamCart[2] != 0 || madamCart[3] != 0 {
+                    print("\nYour order from Madam Lie:")
+                    if madamCart[0] != 0 {
+                        print("- Item 1 x\(madamCart[0])")
+                    }
+                    if madamCart[1] != 0 {
+                        print("- Item 2 x\(madamCart[1])")
+                    }
+                    if madamCart[2] != 0 {
+                        print("- Item 3 x\(madamCart[2])")
+                    }
+                    if madamCart[3] != 0 {
+                        print("- Item 4 x\(madamCart[3])")
+                    }
+                }
+                // cart kopte
+                if kopteCart[0] != 0 || kopteCart[1] != 0 || kopteCart[2] != 0 || kopteCart[3] != 0 {
+                    print("\nYour order from Kopte:")
+                    if kopteCart[0] != 0 {
+                        print("- Item 1 x\(kopteCart[0])")
+                    }
+                    if kopteCart[1] != 0 {
+                        print("- Item 2 x\(kopteCart[1])")
+                    }
+                    if kopteCart[2] != 0 {
+                        print("- Item 3 x\(kopteCart[2])")
+                    }
+                    if kopteCart[3] != 0 {
+                        print("- Item 4 x\(kopteCart[3])")
+                    }
+                }
                 // change loop above
                 print ("""
                 \nPress [B] to go back
