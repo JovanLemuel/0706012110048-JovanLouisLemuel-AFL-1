@@ -15,7 +15,8 @@ var madamMenu:String?
 var kopteMenu:String?
 var cartMenu: String?
 var userInput: Int?
-var cart: Int? = 1
+var cart: Int?
+var totalOrder: Int?
 
 //array declaration
 var tukuCart: [Int] = [0, 0, 0, 0]
@@ -247,13 +248,14 @@ repeat {
         } while kopteMenu != "b"
         mainMenu = ""
     case "s":
-        if cart == 0 {
+        if getCart() == 0 {
             print("\nYour cart is empty.")
         } else {
             repeat {
+                print("")
                 // cart tuku-tuku
                 if tukuCart[0] != 0 || tukuCart[1] != 0 || tukuCart[2] != 0 || tukuCart[3] != 0 {
-                    print("\nYour order from Tuku-Tuku:")
+                    print("Your order from Tuku-Tuku:")
                     if tukuCart[0] != 0 {
                         print("- Tahu isi x\(tukuCart[0])")
                     }
@@ -269,7 +271,7 @@ repeat {
                 }
                 // cart gotri
                 if gotriCart[0] != 0 || gotriCart[1] != 0 || gotriCart[2] != 0 || gotriCart[3] != 0 {
-                    print("\nYour order from Gotri:")
+                    print("Your order from Gotri:")
                     if gotriCart[0] != 0 {
                         print("- Item 1 x\(gotriCart[0])")
                     }
@@ -285,7 +287,7 @@ repeat {
                 }
                 // cart madam lie
                 if madamCart[0] != 0 || madamCart[1] != 0 || madamCart[2] != 0 || madamCart[3] != 0 {
-                    print("\nYour order from Madam Lie:")
+                    print("Your order from Madam Lie:")
                     if madamCart[0] != 0 {
                         print("- Item 1 x\(madamCart[0])")
                     }
@@ -301,7 +303,7 @@ repeat {
                 }
                 // cart kopte
                 if kopteCart[0] != 0 || kopteCart[1] != 0 || kopteCart[2] != 0 || kopteCart[3] != 0 {
-                    print("\nYour order from Kopte:")
+                    print("Your order from Kopte:")
                     if kopteCart[0] != 0 {
                         print("- Item 1 x\(kopteCart[0])")
                     }
@@ -315,13 +317,18 @@ repeat {
                         print("- Item 4 x\(kopteCart[3])")
                     }
                 }
-                // change loop above
                 print ("""
                 \nPress [B] to go back
                 Press [P] to pay / checkout
                 Your choice?
                 """)
                 cartMenu = readLine()?.lowercased()
+                // checkout menu
+                if cartMenu == "p" {
+                    print("\nYour total order: \(getTotalOrder())")
+                    print("Enter the amount of your money:")
+                    userInput = Int(readLine()!)
+                }
             } while cartMenu != "b" // || cartMenu != "p"
             cartMenu = ""
         }
@@ -347,3 +354,15 @@ repeat {
         break
     }
 } while mainMenu != "q"
+
+// getTotalOrder function
+func getTotalOrder() -> Int {
+    totalOrder = ((tukuCart[0] * 5000) + (tukuCart[1] * 20000) + (tukuCart[2] * 20000) + (tukuCart[3] * 5000)) + ((gotriCart[0] * 999000) + (gotriCart[1] * 999000) + (gotriCart[2] * 999000) + (gotriCart[3] * 999000)) + ((madamCart[0] * 999000) + (madamCart[1] * 999000) + (madamCart[2] * 999000) + (madamCart[3] * 999000)) + ((kopteCart[0] * 999000) + (kopteCart[1] * 999000) + (kopteCart[2] * 999000) + (kopteCart[3] * 999000))
+    return totalOrder!
+}
+
+// getCart function
+func getCart() -> Int {
+    cart = (tukuCart[0] + tukuCart[1] + tukuCart[2] + tukuCart[3]) + (gotriCart[0] + gotriCart[1] + gotriCart[2] + gotriCart[3]) + (madamCart[0] + madamCart[1] + madamCart[2] + madamCart[3]) + (kopteCart[0] + kopteCart[1] + kopteCart[2] + kopteCart[3])
+    return cart!
+}
