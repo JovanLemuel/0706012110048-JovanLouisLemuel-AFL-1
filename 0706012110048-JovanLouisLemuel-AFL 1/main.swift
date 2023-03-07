@@ -28,41 +28,52 @@ var kopteCart: [Int] = [0, 0, 0, 0]
 repeat {
     switch mainMenu {
     case "1":
-        print("mainMenu = \(mainMenu)")
         repeat {
             switch tukuMenu {
             case "1":
                 print("\nTahu Isi @ 5.000")
                 print("How many tahu isi do you want to buy?")
-                userInput = Int(readLine()!)
-                tukuCart[0] += userInput!
-                print("Thank you for ordering.")
-                tukuMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    tukuCart[0] += userInput
+                    print("\nThank you for ordering.")
+                    tukuMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case "2":
                 print("\nNasi Kuning @ 20.000")
                 print("How many nasi kuning do you want to buy?")
-                userInput = Int(readLine()!)
-                tukuCart[1] += userInput!
-                print("Thank you for ordering.")
-                tukuMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    tukuCart[1] += userInput
+                    print("\nThank you for ordering.")
+                    tukuMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case"3":
                 print("\nNasi Campur @ 20.000")
                 print("How many nasi campur do you want to buy?")
-                userInput = Int(readLine()!)
-                tukuCart[2] += userInput!
-                print("Thank you for ordering.")
-                tukuMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    tukuCart[2] += userInput
+                    print("\nThank you for ordering.")
+                    tukuMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case"4":
                 print("\nAir Mineral @ 5.000")
                 print("How many air mineral do you want to buy?")
-                userInput = Int(readLine()!)
-                tukuCart[3] += userInput!
-                print("Thank you for ordering.")
-                tukuMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    tukuCart[3] += userInput
+                    print("\nThank you for ordering.")
+                    tukuMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case "b":
                 tukuMenu = ""
             default:
@@ -83,41 +94,52 @@ repeat {
         } while tukuMenu != "b"
         mainMenu = ""
     case "2":
-        print("mainMenu = \(mainMenu)")
         repeat {
             switch gotriMenu {
             case "1":
                 print("\nItem 1 @ 999.000")
                 print("How many item 1 do you want to buy?")
-                userInput = Int(readLine()!)
-                gotriCart[0] += userInput!
-                print("Thank you for ordering.")
-                gotriMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    gotriCart[0] += userInput
+                    print("\nThank you for ordering.")
+                    gotriMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case "2":
                 print("\nItem 2 @ 999.000")
                 print("How many item 2 do you want to buy?")
-                userInput = Int(readLine()!)
-                gotriCart[1] += userInput!
-                print("Thank you for ordering.")
-                gotriMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    gotriCart[1] += userInput
+                    print("\nThank you for ordering.")
+                    gotriMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case"3":
                 print("\nItem 3 @ 999.000")
                 print("How many item 3 do you want to buy?")
-                userInput = Int(readLine()!)
-                gotriCart[2] += userInput!
-                print("Thank you for ordering.")
-                gotriMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    gotriCart[2] += userInput
+                    print("\nThank you for ordering.")
+                    gotriMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case"4":
                 print("\nItem 4 @ 999.000")
                 print("How many item 4 do you want to buy?")
-                userInput = Int(readLine()!)
-                gotriCart[3] += userInput!
-                print("Thank you for ordering.")
-                gotriMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    gotriCart[3] += userInput
+                    print("\nThank you for ordering.")
+                    gotriMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case "b":
                 gotriMenu = ""
             default:
@@ -138,41 +160,52 @@ repeat {
         } while gotriMenu != "b"
         mainMenu = ""
     case "3":
-        print("mainMenu = \(mainMenu)")
         repeat {
             switch madamMenu {
             case "1":
                 print("\nItem 1 @ 999.000")
                 print("How many item 1 do you want to buy?")
-                userInput = Int(readLine()!)
-                madamCart[0] += userInput!
-                print("Thank you for ordering.")
-                madamMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    madamCart[0] += userInput
+                    print("\nThank you for ordering.")
+                    madamMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case "2":
                 print("\nItem 2 @ 999.000")
                 print("How many item 2 do you want to buy?")
-                userInput = Int(readLine()!)
-                madamCart[1] += userInput!
-                print("Thank you for ordering.")
-                madamMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    madamCart[1] += userInput
+                    print("\nThank you for ordering.")
+                    madamMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case"3":
                 print("\nItem 3 @ 999.000")
                 print("How many item 3 do you want to buy?")
-                userInput = Int(readLine()!)
-                madamCart[2] += userInput!
-                print("Thank you for ordering.")
-                madamMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    madamCart[2] += userInput
+                    print("\nThank you for ordering.")
+                    madamMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case"4":
                 print("\nItem 4 @ 999.000")
                 print("How many item 4 do you want to buy?")
-                userInput = Int(readLine()!)
-                madamCart[3] += userInput!
-                print("Thank you for ordering.")
-                madamMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    madamCart[3] += userInput
+                    print("\nThank you for ordering.")
+                    madamMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case "b":
                 madamMenu = ""
             default:
@@ -193,41 +226,52 @@ repeat {
         } while madamMenu != "b"
         mainMenu = ""
     case "4":
-        print("mainMenu = \(mainMenu)")
         repeat {
             switch kopteMenu {
             case "1":
                 print("\nItem 1 @ 999.000")
                 print("How many item 1 do you want to buy?")
-                userInput = Int(readLine()!)
-                kopteCart[0] += userInput!
-                print("Thank you for ordering.")
-                kopteMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    kopteCart[0] += userInput
+                    print("\nThank you for ordering.")
+                    kopteMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case "2":
                 print("\nItem 2 @ 999.000")
                 print("How many item 2 do you want to buy?")
-                userInput = Int(readLine()!)
-                kopteCart[1] += userInput!
-                print("Thank you for ordering.")
-                kopteMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    kopteCart[1] += userInput
+                    print("\nThank you for ordering.")
+                    kopteMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case"3":
                 print("\nItem 3 @ 999.000")
                 print("How many item 3 do you want to buy?")
-                userInput = Int(readLine()!)
-                kopteCart[2] += userInput!
-                print("Thank you for ordering.")
-                kopteMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    kopteCart[2] += userInput
+                    print("\nThank you for ordering.")
+                    kopteMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case"4":
                 print("\nItem 4 @ 999.000")
                 print("How many item 4 do you want to buy?")
-                userInput = Int(readLine()!)
-                kopteCart[3] += userInput!
-                print("Thank you for ordering.")
-                kopteMenu = ""
-                break
+                if let input = readLine(), let userInput = Int(input) {
+                    kopteCart[3] += userInput
+                    print("\nThank you for ordering.")
+                    kopteMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid integer value.")
+                }
             case "b":
                 kopteMenu = ""
             default:
@@ -335,7 +379,6 @@ repeat {
         mainMenu = ""
         break
     case "q":
-        print("mainMenu = \(mainMenu)")
         exit(0)
     default:
         print("""
