@@ -10,13 +10,15 @@ import Foundation
 //variable declaration
 var mainMenu: String?
 var tukuMenu: String?
-var gotriMenu:String?
-var madamMenu:String?
-var kopteMenu:String?
+var gotriMenu: String?
+var madamMenu: String?
+var kopteMenu: String?
 var cartMenu: String?
 var userInput: Int?
 var cart: Int?
 var totalOrder: Int?
+var change: Int
+var pay: Int
 
 //array declaration
 var tukuCart: [Int] = [0, 0, 0, 0]
@@ -39,7 +41,7 @@ repeat {
                     tukuMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case "2":
                 print("\nNasi Kuning @ 20.000")
@@ -50,7 +52,7 @@ repeat {
                     tukuMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case"3":
                 print("\nNasi Campur @ 20.000")
@@ -61,7 +63,7 @@ repeat {
                     tukuMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case"4":
                 print("\nAir Mineral @ 5.000")
@@ -72,7 +74,7 @@ repeat {
                     tukuMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case "b":
                 tukuMenu = ""
@@ -105,7 +107,7 @@ repeat {
                     gotriMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case "2":
                 print("\nItem 2 @ 999.000")
@@ -116,7 +118,7 @@ repeat {
                     gotriMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case"3":
                 print("\nItem 3 @ 999.000")
@@ -127,7 +129,7 @@ repeat {
                     gotriMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case"4":
                 print("\nItem 4 @ 999.000")
@@ -138,7 +140,7 @@ repeat {
                     gotriMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case "b":
                 gotriMenu = ""
@@ -171,7 +173,7 @@ repeat {
                     madamMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case "2":
                 print("\nItem 2 @ 999.000")
@@ -182,7 +184,7 @@ repeat {
                     madamMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case"3":
                 print("\nItem 3 @ 999.000")
@@ -193,7 +195,7 @@ repeat {
                     madamMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case"4":
                 print("\nItem 4 @ 999.000")
@@ -204,7 +206,7 @@ repeat {
                     madamMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case "b":
                 madamMenu = ""
@@ -237,7 +239,7 @@ repeat {
                     kopteMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case "2":
                 print("\nItem 2 @ 999.000")
@@ -248,7 +250,7 @@ repeat {
                     kopteMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case"3":
                 print("\nItem 3 @ 999.000")
@@ -259,7 +261,7 @@ repeat {
                     kopteMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case"4":
                 print("\nItem 4 @ 999.000")
@@ -270,7 +272,7 @@ repeat {
                     kopteMenu = ""
                     break
                 } else {
-                    print("\nPlease enter a valid integer value.")
+                    print("\nPlease enter a valid amount.")
                 }
             case "b":
                 kopteMenu = ""
@@ -371,6 +373,23 @@ repeat {
                 if cartMenu == "p" {
                     print("\nYour total order: \(getTotalOrder())")
                     print("Enter the amount of your money:")
+                    if userInput ?? 0 < 0 {
+                        print("\nPlease enter a valid amount.")
+                    } else if let input2 = readLine(), let userInput = Int(input2) {
+                        pay = userInput
+                        change = (totalOrder ?? 0) - pay
+                        if pay < totalOrder! {
+                            print("\nAmount is too small")
+                        } else {
+                            print("\nYour total order: \(getTotalOrder())")
+                            print("You pay: \(pay) Change: \(abs(change))")
+                            totalOrder! -= pay
+                            print("\nEnjoy your meals!")
+                        }
+                    } else {
+                        print("\nPlease enter a valid amount.")
+                    }
+                    print("\nPress [ANY KEY] to go back to main screen:")
                     userInput = Int(readLine()!)
                 }
             } while cartMenu != "b" // || cartMenu != "p"
