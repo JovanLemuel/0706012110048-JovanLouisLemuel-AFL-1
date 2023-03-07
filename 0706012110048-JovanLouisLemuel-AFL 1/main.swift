@@ -384,7 +384,12 @@ repeat {
                             print("\nYour total order: \(getTotalOrder())")
                             print("You pay: \(pay) Change: \(abs(change))")
                             totalOrder! -= pay
+                            tukuCart = [0, 0, 0, 0]
+                            gotriCart = [0, 0, 0, 0]
+                            madamCart = [0, 0, 0, 0]
+                            kopteCart = [0, 0, 0, 0]
                             print("\nEnjoy your meals!")
+                            break
                         }
                     } else {
                         print("\nPlease enter a valid amount.")
