@@ -20,6 +20,7 @@ var cart: Int?
 var totalOrder: Int?
 var change: Int
 var pay: Int
+var back: Int
 
 //array declaration
 var tukuCart: [Int] = [0, 0, 0, 0, 0]
@@ -38,10 +39,12 @@ repeat {
                 print("\nTahu Isi @ 5.000")
                 print("How many tahu isi do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    tukuCart[0] += userInput
-                    print("\nThank you for ordering.")
-                    tukuMenu = ""
-                    break
+                    if userInput >= 0 {
+                        tukuCart[0] += userInput
+                        print("\nThank you for ordering.")
+                        tukuMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -49,10 +52,12 @@ repeat {
                 print("\nNasi Kuning @ 20.000")
                 print("How many nasi kuning do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    tukuCart[1] += userInput
-                    print("\nThank you for ordering.")
-                    tukuMenu = ""
-                    break
+                    if userInput >= 0 {
+                        tukuCart[1] += userInput
+                        print("\nThank you for ordering.")
+                        tukuMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -60,10 +65,12 @@ repeat {
                 print("\nNasi Campur @ 20.000")
                 print("How many nasi campur do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    tukuCart[2] += userInput
-                    print("\nThank you for ordering.")
-                    tukuMenu = ""
-                    break
+                    if userInput >= 0 {
+                        tukuCart[2] += userInput
+                        print("\nThank you for ordering.")
+                        tukuMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -71,10 +78,12 @@ repeat {
                 print("\nAir Mineral @ 5.000")
                 print("How many air mineral do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    tukuCart[3] += userInput
-                    print("\nThank you for ordering.")
-                    tukuMenu = ""
-                    break
+                    if userInput >= 0 {
+                        tukuCart[3] += userInput
+                        print("\nThank you for ordering.")
+                        tukuMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -82,10 +91,12 @@ repeat {
                 print("\nAyam Geprek @ 20.000")
                 print("How many ayam geprek do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    tukuCart[4] += userInput
-                    print("\nThank you for ordering.")
-                    tukuMenu = ""
-                    break
+                    if userInput >= 0 {
+                        tukuCart[4] += userInput
+                        print("\nThank you for ordering.")
+                        tukuMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -116,10 +127,12 @@ repeat {
                 print("\nNasi Uduk @ 25.000")
                 print("How many nasi uduk do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    gotriCart[0] += userInput
-                    print("\nThank you for ordering.")
-                    gotriMenu = ""
-                    break
+                    if userInput >= 0 {
+                        gotriCart[0] += userInput
+                        print("\nThank you for ordering.")
+                        gotriMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -127,10 +140,12 @@ repeat {
                 print("\nNasi Lemak @ 30.000")
                 print("How many nasi lemak do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    gotriCart[1] += userInput
-                    print("\nThank you for ordering.")
-                    gotriMenu = ""
-                    break
+                    if userInput >= 0 {
+                        gotriCart[1] += userInput
+                        print("\nThank you for ordering.")
+                        gotriMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -138,10 +153,12 @@ repeat {
                 print("\nTahu Campur @ 10.000")
                 print("How many tahu campur do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    gotriCart[2] += userInput
-                    print("\nThank you for ordering.")
-                    gotriMenu = ""
-                    break
+                    if userInput >= 0 {
+                        gotriCart[2] += userInput
+                        print("\nThank you for ordering.")
+                        gotriMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -149,9 +166,11 @@ repeat {
                 print("\nAir Mineral @ 5.000")
                 print("How many air mineral do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    gotriCart[3] += userInput
-                    print("\nThank you for ordering.")
-                    gotriMenu = ""
+                    if userInput >= 0 {
+                        gotriCart[3] += userInput
+                        print("\nThank you for ordering.")
+                        gotriMenu = ""
+                    }
                     break
                 } else {
                     print("\nPlease enter a valid amount.")
@@ -160,10 +179,12 @@ repeat {
                 print("\nEs Teh @ 7.000")
                 print("How many es teh do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    gotriCart[4] += userInput
-                    print("\nThank you for ordering.")
-                    gotriMenu = ""
-                    break
+                    if userInput >= 0 {
+                        gotriCart[4] += userInput
+                        print("\nThank you for ordering.")
+                        gotriMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -194,10 +215,12 @@ repeat {
                 print("\nSalad Ayam @ 40.000")
                 print("How many salad ayam do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    madamCart[0] += userInput
-                    print("\nThank you for ordering.")
-                    madamMenu = ""
-                    break
+                    if userInput >= 0 {
+                        madamCart[0] += userInput
+                        print("\nThank you for ordering.")
+                        madamMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -205,10 +228,12 @@ repeat {
                 print("\nSalad Ikan @ 35.000")
                 print("How many salad ikan do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    madamCart[1] += userInput
-                    print("\nThank you for ordering.")
-                    madamMenu = ""
-                    break
+                    if userInput >= 0 {
+                        madamCart[1] += userInput
+                        print("\nThank you for ordering.")
+                        madamMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -216,10 +241,12 @@ repeat {
                 print("\nSalad Sapi @ 45.000")
                 print("How many salad sapi do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    madamCart[2] += userInput
-                    print("\nThank you for ordering.")
-                    madamMenu = ""
-                    break
+                    if userInput >= 0 {
+                        madamCart[2] += userInput
+                        print("\nThank you for ordering.")
+                        madamMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -227,10 +254,12 @@ repeat {
                 print("\nAir Mineral @ 5.000")
                 print("How many air mineral do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    madamCart[3] += userInput
-                    print("\nThank you for ordering.")
-                    madamMenu = ""
-                    break
+                    if userInput >= 0 {
+                        madamCart[3] += userInput
+                        print("\nThank you for ordering.")
+                        madamMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -238,10 +267,12 @@ repeat {
                 print("\nKombucha @ 20.000")
                 print("How many kombucha do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    madamCart[4] += userInput
-                    print("\nThank you for ordering.")
-                    madamMenu = ""
-                    break
+                    if userInput >= 0 {
+                        madamCart[4] += userInput
+                        print("\nThank you for ordering.")
+                        madamMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -272,10 +303,12 @@ repeat {
                 print("\nKopi Tarik @ 20.000")
                 print("How many kopi tarik do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    kopteCart[0] += userInput
-                    print("\nThank you for ordering.")
-                    kopteMenu = ""
-                    break
+                    if userInput >= 0 {
+                        kopteCart[0] += userInput
+                        print("\nThank you for ordering.")
+                        kopteMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -283,10 +316,12 @@ repeat {
                 print("\nTeh Tarik @ 15.000")
                 print("How many teh tarik do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    kopteCart[1] += userInput
-                    print("\nThank you for ordering.")
-                    kopteMenu = ""
-                    break
+                    if userInput >= 0 {
+                        kopteCart[1] += userInput
+                        print("\nThank you for ordering.")
+                        kopteMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -294,10 +329,12 @@ repeat {
                 print("\nRoti Bakar @ 15.000")
                 print("How many roti bakar do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    kopteCart[2] += userInput
-                    print("\nThank you for ordering.")
-                    kopteMenu = ""
-                    break
+                    if userInput >= 0 {
+                        kopteCart[2] += userInput
+                        print("\nThank you for ordering.")
+                        kopteMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -305,10 +342,12 @@ repeat {
                 print("\nRoti Kaya @ 17.000")
                 print("How many roti kaya do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    kopteCart[3] += userInput
-                    print("\nThank you for ordering.")
-                    kopteMenu = ""
-                    break
+                    if userInput >= 0 {
+                        kopteCart[3] += userInput
+                        print("\nThank you for ordering.")
+                        kopteMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -316,10 +355,12 @@ repeat {
                 print("\nAir Mineral @ 6.000")
                 print("How many air mineral do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    kopteCart[4] += userInput
-                    print("\nThank you for ordering.")
-                    kopteMenu = ""
-                    break
+                    if userInput >= 0 {
+                        kopteCart[4] += userInput
+                        print("\nThank you for ordering.")
+                        kopteMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -351,10 +392,12 @@ repeat {
                 print("\nKopi Hitam @ 20.000")
                 print("How many kopi hitam do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    webelCart[0] += userInput
-                    print("\nThank you for ordering.")
-                    webelMenu = ""
-                    break
+                    if userInput >= 0 {
+                        webelCart[0] += userInput
+                        print("\nThank you for ordering.")
+                        webelMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -362,10 +405,12 @@ repeat {
                 print("\nKopi Manis @ 22.000")
                 print("How many kopi manis do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    webelCart[1] += userInput
-                    print("\nThank you for ordering.")
-                    webelMenu = ""
-                    break
+                    if userInput >= 0 {
+                        webelCart[1] += userInput
+                        print("\nThank you for ordering.")
+                        webelMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -373,10 +418,12 @@ repeat {
                 print("\nKopi Susu @ 25.000")
                 print("How many kopi susu do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    webelCart[2] += userInput
-                    print("\nThank you for ordering.")
-                    webelMenu = ""
-                    break
+                    if userInput >= 0 {
+                        webelCart[2] += userInput
+                        print("\nThank you for ordering.")
+                        webelMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -384,10 +431,12 @@ repeat {
                 print("\nKopi Tubruk @ 15.000")
                 print("How many kopi tubruk do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    webelCart[3] += userInput
-                    print("\nThank you for ordering.")
-                    webelMenu = ""
-                    break
+                    if userInput >= 0 {
+                        webelCart[3] += userInput
+                        print("\nThank you for ordering.")
+                        webelMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -395,10 +444,12 @@ repeat {
                 print("\nAir Mineral @ 7.000")
                 print("How many air mineral do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
-                    webelCart[4] += userInput
-                    print("\nThank you for ordering.")
-                    webelMenu = ""
-                    break
+                    if userInput >= 0 {
+                        webelCart[4] += userInput
+                        print("\nThank you for ordering.")
+                        webelMenu = ""
+                        break
+                    }
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
@@ -506,7 +557,7 @@ repeat {
                 }
                 // cart webels
                 if webelCart[0] != 0 || webelCart[1] != 0 || webelCart[2] != 0 || webelCart[3] != 0 || webelCart[4] != 0 {
-                    print("Your order from Kopte:")
+                    print("Your order from Webels:")
                     if webelCart[0] != 0 {
                         print("- Kopi Hitam x\(webelCart[0])")
                     }
@@ -550,13 +601,13 @@ repeat {
                             kopteCart = [0, 0, 0, 0, 0]
                             webelCart = [0, 0, 0, 0, 0]
                             print("\nEnjoy your meals!")
+                            print("\nPress [ANY KEY] to go back to main screen:")
+                            back = Int(readLine()!) ?? 0
                             break
                         }
                     } else {
                         print("\nPlease enter a valid amount.")
                     }
-                    print("\nPress [ANY KEY] to go back to main screen:")
-                    userInput = Int(readLine()!)
                 }
             } while cartMenu != "b" // || cartMenu != "p"
             cartMenu = ""
