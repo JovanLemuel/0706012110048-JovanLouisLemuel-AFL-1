@@ -13,6 +13,7 @@ var tukuMenu: String?
 var gotriMenu: String?
 var madamMenu: String?
 var kopteMenu: String?
+var webelMenu: String?
 var cartMenu: String?
 var userInput: Int?
 var cart: Int?
@@ -21,10 +22,11 @@ var change: Int
 var pay: Int
 
 //array declaration
-var tukuCart: [Int] = [0, 0, 0, 0]
-var gotriCart: [Int] = [0, 0, 0, 0]
-var madamCart: [Int] = [0, 0, 0, 0]
-var kopteCart: [Int] = [0, 0, 0, 0]
+var tukuCart: [Int] = [0, 0, 0, 0, 0]
+var gotriCart: [Int] = [0, 0, 0, 0, 0]
+var madamCart: [Int] = [0, 0, 0, 0, 0]
+var kopteCart: [Int] = [0, 0, 0, 0, 0]
+var webelCart: [Int] = [0, 0, 0, 0, 0]
 
 //start of program
 repeat {
@@ -76,6 +78,17 @@ repeat {
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
+            case"5":
+                print("\nAyam Geprek @ 20.000")
+                print("How many ayam geprek do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    tukuCart[4] += userInput
+                    print("\nThank you for ordering.")
+                    tukuMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
             case "b":
                 tukuMenu = ""
             default:
@@ -86,6 +99,7 @@ repeat {
                 [2] Nasi kuning
                 [3] Nasi campur
                 [4] Air mineral
+                [5] Ayam Geprek
                 -
                 [B]ack to Main Menu
                 Your menu choice?
@@ -99,8 +113,8 @@ repeat {
         repeat {
             switch gotriMenu {
             case "1":
-                print("\nItem 1 @ 999.000")
-                print("How many item 1 do you want to buy?")
+                print("\nNasi Uduk @ 25.000")
+                print("How many nasi uduk do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     gotriCart[0] += userInput
                     print("\nThank you for ordering.")
@@ -110,8 +124,8 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case "2":
-                print("\nItem 2 @ 999.000")
-                print("How many item 2 do you want to buy?")
+                print("\nNasi Lemak @ 30.000")
+                print("How many nasi lemak do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     gotriCart[1] += userInput
                     print("\nThank you for ordering.")
@@ -121,8 +135,8 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case"3":
-                print("\nItem 3 @ 999.000")
-                print("How many item 3 do you want to buy?")
+                print("\nTahu Campur @ 10.000")
+                print("How many tahu campur do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     gotriCart[2] += userInput
                     print("\nThank you for ordering.")
@@ -132,10 +146,21 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case"4":
-                print("\nItem 4 @ 999.000")
-                print("How many item 4 do you want to buy?")
+                print("\nAir Mineral @ 5.000")
+                print("How many air mineral do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     gotriCart[3] += userInput
+                    print("\nThank you for ordering.")
+                    gotriMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
+            case"5":
+                print("\nEs Teh @ 7.000")
+                print("How many es teh do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    gotriCart[4] += userInput
                     print("\nThank you for ordering.")
                     gotriMenu = ""
                     break
@@ -148,10 +173,11 @@ repeat {
                 print("""
                 \nHi, welcome back to Gotri!
                 What would you like to order?\n
-                [1] Item 1
-                [2] Item 2
-                [3] Item 3
-                [4] Item 4
+                [1] Nasi Uduk
+                [2] Nasi Lemak
+                [3] Tahu Campur
+                [4] Air Mineral
+                [5] Es Teh
                 -
                 [B]ack to Main Menu
                 Your menu choice?
@@ -165,8 +191,8 @@ repeat {
         repeat {
             switch madamMenu {
             case "1":
-                print("\nItem 1 @ 999.000")
-                print("How many item 1 do you want to buy?")
+                print("\nSalad Ayam @ 40.000")
+                print("How many salad ayam do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     madamCart[0] += userInput
                     print("\nThank you for ordering.")
@@ -176,8 +202,8 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case "2":
-                print("\nItem 2 @ 999.000")
-                print("How many item 2 do you want to buy?")
+                print("\nSalad Ikan @ 35.000")
+                print("How many salad ikan do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     madamCart[1] += userInput
                     print("\nThank you for ordering.")
@@ -187,8 +213,8 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case"3":
-                print("\nItem 3 @ 999.000")
-                print("How many item 3 do you want to buy?")
+                print("\nSalad Sapi @ 45.000")
+                print("How many salad sapi do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     madamCart[2] += userInput
                     print("\nThank you for ordering.")
@@ -198,10 +224,21 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case"4":
-                print("\nItem 4 @ 999.000")
-                print("How many item 4 do you want to buy?")
+                print("\nAir Mineral @ 5.000")
+                print("How many air mineral do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     madamCart[3] += userInput
+                    print("\nThank you for ordering.")
+                    madamMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
+            case"5":
+                print("\nKombucha @ 20.000")
+                print("How many kombucha do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    madamCart[4] += userInput
                     print("\nThank you for ordering.")
                     madamMenu = ""
                     break
@@ -214,10 +251,11 @@ repeat {
                 print("""
                 \nHi, welcome back to Madam Lie!
                 What would you like to order?\n
-                [1] Item 1
-                [2] Item 2
-                [3] Item 3
-                [4] Item 4
+                [1] Salad Ayam
+                [2] Salad Ikan
+                [3] Salad Sapi
+                [4] Air Mineral
+                [5] Kombucha
                 -
                 [B]ack to Main Menu
                 Your menu choice?
@@ -231,8 +269,8 @@ repeat {
         repeat {
             switch kopteMenu {
             case "1":
-                print("\nItem 1 @ 999.000")
-                print("How many item 1 do you want to buy?")
+                print("\nKopi Tarik @ 20.000")
+                print("How many kopi tarik do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     kopteCart[0] += userInput
                     print("\nThank you for ordering.")
@@ -242,8 +280,8 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case "2":
-                print("\nItem 2 @ 999.000")
-                print("How many item 2 do you want to buy?")
+                print("\nTeh Tarik @ 15.000")
+                print("How many teh tarik do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     kopteCart[1] += userInput
                     print("\nThank you for ordering.")
@@ -253,8 +291,8 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case"3":
-                print("\nItem 3 @ 999.000")
-                print("How many item 3 do you want to buy?")
+                print("\nRoti Bakar @ 15.000")
+                print("How many roti bakar do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     kopteCart[2] += userInput
                     print("\nThank you for ordering.")
@@ -264,8 +302,8 @@ repeat {
                     print("\nPlease enter a valid amount.")
                 }
             case"4":
-                print("\nItem 4 @ 999.000")
-                print("How many item 4 do you want to buy?")
+                print("\nRoti Kaya @ 17.000")
+                print("How many roti kaya do you want to buy?")
                 if let input = readLine(), let userInput = Int(input) {
                     kopteCart[3] += userInput
                     print("\nThank you for ordering.")
@@ -274,16 +312,29 @@ repeat {
                 } else {
                     print("\nPlease enter a valid amount.")
                 }
+            case"5":
+                print("\nAir Mineral @ 6.000")
+                print("How many air mineral do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    kopteCart[4] += userInput
+                    print("\nThank you for ordering.")
+                    kopteMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
+
             case "b":
                 kopteMenu = ""
             default:
                 print("""
                 \nHi, welcome back to Kopte!
                 What would you like to order?\n
-                [1] Item 1
-                [2] Item 2
-                [3] Item 3
-                [4] Item 4
+                [1] Kopi Tarik
+                [2] Teh Tarik
+                [3] Roti Bakar
+                [4] Roti Kaya
+                [5] Air Mineral
                 -
                 [B]ack to Main Menu
                 Your menu choice?
@@ -293,6 +344,84 @@ repeat {
             }
         } while kopteMenu != "b"
         mainMenu = ""
+    case "5":
+        repeat {
+            switch webelMenu {
+            case "1":
+                print("\nKopi Hitam @ 20.000")
+                print("How many kopi hitam do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    webelCart[0] += userInput
+                    print("\nThank you for ordering.")
+                    webelMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
+            case "2":
+                print("\nKopi Manis @ 22.000")
+                print("How many kopi manis do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    webelCart[1] += userInput
+                    print("\nThank you for ordering.")
+                    webelMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
+            case"3":
+                print("\nKopi Susu @ 25.000")
+                print("How many kopi susu do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    webelCart[2] += userInput
+                    print("\nThank you for ordering.")
+                    webelMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
+            case"4":
+                print("\nKopi Tubruk @ 15.000")
+                print("How many kopi tubruk do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    webelCart[3] += userInput
+                    print("\nThank you for ordering.")
+                    webelMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
+            case"5":
+                print("\nAir Mineral @ 7.000")
+                print("How many air mineral do you want to buy?")
+                if let input = readLine(), let userInput = Int(input) {
+                    webelCart[4] += userInput
+                    print("\nThank you for ordering.")
+                    webelMenu = ""
+                    break
+                } else {
+                    print("\nPlease enter a valid amount.")
+                }
+            case "b":
+                webelMenu = ""
+            default:
+                print("""
+                \nHi, welcome back to Webels!
+                What would you like to order?\n
+                [1] Kopi Hitam
+                [2] Kopi Manis
+                [3] Kopi Susu
+                [4] Kopi Tubruk
+                [5] Air Mineral
+                -
+                [B]ack to Main Menu
+                Your menu choice?
+                """)
+                webelMenu = readLine()?.lowercased()
+                break
+            }
+        } while webelMenu != "b"
+        mainMenu = ""
     case "s":
         if getCart() == 0 {
             print("\nYour cart is empty.")
@@ -300,7 +429,7 @@ repeat {
             repeat {
                 print("")
                 // cart tuku-tuku
-                if tukuCart[0] != 0 || tukuCart[1] != 0 || tukuCart[2] != 0 || tukuCart[3] != 0 {
+                if tukuCart[0] != 0 || tukuCart[1] != 0 || tukuCart[2] != 0 || tukuCart[3] != 0 || tukuCart[4] != 0 {
                     print("Your order from Tuku-Tuku:")
                     if tukuCart[0] != 0 {
                         print("- Tahu isi x\(tukuCart[0])")
@@ -314,53 +443,84 @@ repeat {
                     if tukuCart[3] != 0 {
                         print("- Air mineral x\(tukuCart[3])")
                     }
+                    if tukuCart[4] != 0 {
+                        print("- Ayam Geprek x\(tukuCart[4])")
+                    }
                 }
                 // cart gotri
-                if gotriCart[0] != 0 || gotriCart[1] != 0 || gotriCart[2] != 0 || gotriCart[3] != 0 {
+                if gotriCart[0] != 0 || gotriCart[1] != 0 || gotriCart[2] != 0 || gotriCart[3] != 0 || gotriCart[4] != 0 {
                     print("Your order from Gotri:")
                     if gotriCart[0] != 0 {
-                        print("- Item 1 x\(gotriCart[0])")
+                        print("- Nasi Uduk x\(gotriCart[0])")
                     }
                     if gotriCart[1] != 0 {
-                        print("- Item 2 x\(gotriCart[1])")
+                        print("- Nasi Lemak x\(gotriCart[1])")
                     }
                     if gotriCart[2] != 0 {
-                        print("- Item 3 x\(gotriCart[2])")
+                        print("- Tahu Campur x\(gotriCart[2])")
                     }
                     if gotriCart[3] != 0 {
-                        print("- Item 4 x\(gotriCart[3])")
+                        print("- Air Mineral x\(gotriCart[3])")
+                    }
+                    if gotriCart[4] != 0 {
+                        print("- Es Teh x\(gotriCart[4])")
                     }
                 }
                 // cart madam lie
-                if madamCart[0] != 0 || madamCart[1] != 0 || madamCart[2] != 0 || madamCart[3] != 0 {
+                if madamCart[0] != 0 || madamCart[1] != 0 || madamCart[2] != 0 || madamCart[3] != 0 || madamCart[4] != 0 {
                     print("Your order from Madam Lie:")
                     if madamCart[0] != 0 {
-                        print("- Item 1 x\(madamCart[0])")
+                        print("- Salad Ayam x\(madamCart[0])")
                     }
                     if madamCart[1] != 0 {
-                        print("- Item 2 x\(madamCart[1])")
+                        print("- Salad Ikan x\(madamCart[1])")
                     }
                     if madamCart[2] != 0 {
-                        print("- Item 3 x\(madamCart[2])")
+                        print("- Salad Sapi x\(madamCart[2])")
                     }
                     if madamCart[3] != 0 {
-                        print("- Item 4 x\(madamCart[3])")
+                        print("- Air Mineral x\(madamCart[3])")
+                    }
+                    if madamCart[4] != 0 {
+                        print("- Kombucha x\(madamCart[4])")
                     }
                 }
                 // cart kopte
-                if kopteCart[0] != 0 || kopteCart[1] != 0 || kopteCart[2] != 0 || kopteCart[3] != 0 {
+                if kopteCart[0] != 0 || kopteCart[1] != 0 || kopteCart[2] != 0 || kopteCart[3] != 0 || kopteCart[4] != 0 {
                     print("Your order from Kopte:")
                     if kopteCart[0] != 0 {
-                        print("- Item 1 x\(kopteCart[0])")
+                        print("- Kopi Tarik x\(kopteCart[0])")
                     }
                     if kopteCart[1] != 0 {
-                        print("- Item 2 x\(kopteCart[1])")
+                        print("- Teh Tarik x\(kopteCart[1])")
                     }
                     if kopteCart[2] != 0 {
-                        print("- Item 3 x\(kopteCart[2])")
+                        print("- Roti Bakar x\(kopteCart[2])")
                     }
                     if kopteCart[3] != 0 {
-                        print("- Item 4 x\(kopteCart[3])")
+                        print("- Roti Kaya x\(kopteCart[3])")
+                    }
+                    if kopteCart[4] != 0 {
+                        print("- Air Mineral x\(kopteCart[4])")
+                    }
+                }
+                // cart webels
+                if webelCart[0] != 0 || webelCart[1] != 0 || webelCart[2] != 0 || webelCart[3] != 0 || webelCart[4] != 0 {
+                    print("Your order from Kopte:")
+                    if webelCart[0] != 0 {
+                        print("- Kopi Hitam x\(webelCart[0])")
+                    }
+                    if webelCart[1] != 0 {
+                        print("- Kopi Manis x\(webelCart[1])")
+                    }
+                    if webelCart[2] != 0 {
+                        print("- Kopi Susu x\(webelCart[2])")
+                    }
+                    if webelCart[3] != 0 {
+                        print("- Kopi Tubruk x\(webelCart[3])")
+                    }
+                    if webelCart[4] != 0 {
+                        print("- Air Mineral x\(webelCart[4])")
                     }
                 }
                 print ("""
@@ -384,10 +544,11 @@ repeat {
                             print("\nYour total order: \(getTotalOrder())")
                             print("You pay: \(pay) Change: \(abs(change))")
                             totalOrder! -= pay
-                            tukuCart = [0, 0, 0, 0]
-                            gotriCart = [0, 0, 0, 0]
-                            madamCart = [0, 0, 0, 0]
-                            kopteCart = [0, 0, 0, 0]
+                            tukuCart = [0, 0, 0, 0, 0]
+                            gotriCart = [0, 0, 0, 0, 0]
+                            madamCart = [0, 0, 0, 0, 0]
+                            kopteCart = [0, 0, 0, 0, 0]
+                            webelCart = [0, 0, 0, 0, 0]
                             print("\nEnjoy your meals!")
                             break
                         }
@@ -412,6 +573,7 @@ repeat {
         [2] Gotri
         [3] Madam Lie
         [4] Kopte
+        [5] Webels
         -
         [S]hopping Cart
         [Q]uit
@@ -424,12 +586,12 @@ repeat {
 
 // getTotalOrder function
 func getTotalOrder() -> Int {
-    totalOrder = ((tukuCart[0] * 5000) + (tukuCart[1] * 20000) + (tukuCart[2] * 20000) + (tukuCart[3] * 5000)) + ((gotriCart[0] * 999000) + (gotriCart[1] * 999000) + (gotriCart[2] * 999000) + (gotriCart[3] * 999000)) + ((madamCart[0] * 999000) + (madamCart[1] * 999000) + (madamCart[2] * 999000) + (madamCart[3] * 999000)) + ((kopteCart[0] * 999000) + (kopteCart[1] * 999000) + (kopteCart[2] * 999000) + (kopteCart[3] * 999000))
+    totalOrder = ((tukuCart[0] * 5000) + (tukuCart[1] * 20000) + (tukuCart[2] * 20000) + (tukuCart[3] * 5000) + (tukuCart[4] * 20000)) + ((gotriCart[0] * 25000) + (gotriCart[1] * 30000) + (gotriCart[2] * 10000) + (gotriCart[3] * 5000) + (gotriCart[4] * 7000)) + ((madamCart[0] * 40000) + (madamCart[1] * 35000) + (madamCart[2] * 45000) + (madamCart[3] * 5000) + (madamCart[4] * 20000)) + ((kopteCart[0] * 20000) + (kopteCart[1] * 15000) + (kopteCart[2] * 15000) + (kopteCart[3] * 17000) + (kopteCart[4] * 6000)) + ((webelCart[0] * 20000) + (webelCart[1] * 22000) + (webelCart[2] * 25000) + (webelCart[3] * 15000) + (webelCart[4] * 7000))
     return totalOrder!
 }
 
 // getCart function
 func getCart() -> Int {
-    cart = (tukuCart[0] + tukuCart[1] + tukuCart[2] + tukuCart[3]) + (gotriCart[0] + gotriCart[1] + gotriCart[2] + gotriCart[3]) + (madamCart[0] + madamCart[1] + madamCart[2] + madamCart[3]) + (kopteCart[0] + kopteCart[1] + kopteCart[2] + kopteCart[3])
+    cart = (tukuCart[0] + tukuCart[1] + tukuCart[2] + tukuCart[3] + tukuCart[4]) + (gotriCart[0] + gotriCart[1] + gotriCart[2] + gotriCart[3] + gotriCart[4]) + (madamCart[0] + madamCart[1] + madamCart[2] + madamCart[3] + madamCart[4]) + (kopteCart[0] + kopteCart[1] + kopteCart[2] + kopteCart[3] + kopteCart[4]) + (webelCart[0] + webelCart[1] + webelCart[2] + webelCart[3] + webelCart[4])
     return cart!
 }
